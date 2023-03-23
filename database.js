@@ -6,7 +6,8 @@ let connection = mysql.createConnection({
     host: "petfinder.cfpwaykl94ky.eu-north-1.rds.amazonaws.com",
     user: "root",
     password: "petFinder2023",
-    database: "petfinder"
+    database: "petFinder",
+    port:3306
 });
 
 connection.connect(function (err, res) {
