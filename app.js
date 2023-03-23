@@ -3,6 +3,9 @@ const cors = require('cors');
 const errorHandling = require("./error/errorHandling");
 const app = express();
 
+const postsRouters=require("./routers/post-router");
+app.use(postsRouters);
+
 
 app.set("port", process.env.PORT || 3000);
 
@@ -17,5 +20,8 @@ app.use(function (req, res, next) {
     })
 })
 app.use(errorHandling);
+
+
+
 
 module.exports = app;

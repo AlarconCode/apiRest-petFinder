@@ -17,3 +17,5 @@ function getPosts(request, response){
         }
     })
 }
+
+module.exports={getPosts}
