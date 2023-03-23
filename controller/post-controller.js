@@ -23,7 +23,7 @@ function putPosts(request, response) {
     post-location= "${request.body.place}", 
     url-post="${request.body.imgPet}",
     description="${request.body.comment}",
-    post-date="${request.body.post_date}"
+    post-date="${request.body.post_date}",
     found=${request.body.found}
     WHERE (id-post=${request.body.id_cardPost})`
 
