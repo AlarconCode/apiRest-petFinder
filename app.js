@@ -3,7 +3,7 @@ const cors = require('cors');
 const errorHandling = require("./error/errorHandling");
 const app = express();
 
-const postsRouters=require("./routers/post-router");
+const postsRouters=require("./routers/post-router.js");
 app.use(postsRouters);
 
 

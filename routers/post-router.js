@@ -4,3 +4,5 @@ const router = Router();
 const postCtrl= require("../controller/post-controller")
 
 router.get("/posts", postCtrl.getPosts)
+
+module.exports = router;

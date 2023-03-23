@@ -4,7 +4,7 @@ function getPosts(request, response){
     let sql;
 
     if(request.query.id_user){
-        sql= `SELECT * FROM posts WHERE id_user=${request.query.id_user}`
+        sql= `SELECT * FROM posts WHERE id-user=${request.query.id_user}`
     }else{
         `SELECT * FROM posts`
     }
