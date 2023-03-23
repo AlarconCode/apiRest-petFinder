@@ -3,9 +3,9 @@ const mysql = require('mysql2')
 
 
 let connection = mysql.createConnection({
-    host: "localhost",
+    host: "petfinder.cfpwaykl94ky.eu-north-1.rds.amazonaws.com",
     user: "root",
-    password: "poiu",
+    password: "petFinder2023",
     database: "petfinder"
 });
 
