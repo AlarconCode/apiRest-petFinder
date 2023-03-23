@@ -1,19 +1,20 @@
-const express = require("express");
-const cors = require('cors');
+const express = require('express')
+const app = express()
+const cors = require('cors')
 const errorHandling = require("./error/errorHandling");
-const app = express();
 
 
-app.set("port", process.env.PORT || 3000);
 
-app.use(cors());
-app.use(express.urlencoded({ extender: false }));
-app.use(express.json());
+// MiddleWares
+app.set('port', process.env.PORT || 3000)
+app.use(express.urlencoded({extended:false}))
+app.use(express.json())
+app.use(cors())
 app.use(function (req, res, next) {
     res.status(404).json({
         error: true,
         codigo: 404,
-        message: "Endpoint doesnt found"
+        message: "Endpoint doesn't found"
     })
 })
 app.use(errorHandling);
