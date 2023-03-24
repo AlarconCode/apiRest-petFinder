@@ -1,6 +1,6 @@
 const connection = require("../database")
 
-function getPosts(request, response) {
+function getPublications(request, response) {
     let respuesta = { error: true, code: 500, result: [] };
     let sql = "";
     let id_user = request.query.id_user;
@@ -28,7 +28,7 @@ function getPosts(request, response) {
     })
 }
 
-function putPosts(request, response) {
+function putPublication(request, response) {
     // let sql = `UPDATE Posts SET 
     // post-location= "${request.body.place}", 
     // url-post="${request.body.imgPet}",
@@ -59,7 +59,7 @@ function putPosts(request, response) {
 }
 
 
-function putFoundPost(request, response) {
+function putFoundPublication(request, response) {
 
     let respuesta = { error: true, code: 500, result: [] };
     const { id_post, found } = request.body
@@ -84,9 +84,9 @@ function putFoundPost(request, response) {
 
 const postPublication = (req, res) => {
 
-    let response = {error: true, code:500, result: []}
+    let response = { error: true, code: 500, result: [] }
 
-    const {id_user, post_location, url_post, description, post_date, found} = req.body
+    const { id_user, post_location, url_post, description, post_date, found } = req.body
 
     let params = [id_user, post_location, url_post, description, post_date, found]
 
@@ -108,5 +108,5 @@ const postPublication = (req, res) => {
     })
 
 }
-module.exports = { getPosts, putPosts, putFoundPost, postPublication}
+module.exports = { getPublications, putPublication, putFoundPublication, postPublication }
 
