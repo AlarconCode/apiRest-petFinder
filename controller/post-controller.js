@@ -110,3 +110,5 @@ const postPublication = (req, res) => {
 }
 module.exports = { getPosts, putPosts, putFoundPost, postPublication}
 
+}
+
