@@ -4,6 +4,7 @@ const app = express()
 const cors = require('cors')
 const errorHandling = require("./error/errorHandling");
 const userRouter = require('./routers/user-router');
+const postRouter = require('./routers/post-router');
 
 
 
@@ -21,6 +22,6 @@ app.use(cors())
 //     })
 // })
 app.use(errorHandling);
-app.use(userRouter)
+app.use(userRouter, postRouter)
 
 module.exports = app;
