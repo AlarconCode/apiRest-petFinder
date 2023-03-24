@@ -108,5 +108,5 @@ const postPublication = (req, res) => {
     })
 
 }
-module.exports = { getPosts, putPosts, putFoundPost, postPublication, getFoundPost }
+module.exports = { getPosts, putPosts, putFoundPost, postPublication}
 
