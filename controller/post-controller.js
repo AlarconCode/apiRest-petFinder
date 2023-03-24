@@ -54,4 +54,5 @@ const deletePublication = (req, res) => {
 
 }
 
+
 module.exports = { postPublication, deletePublication }
