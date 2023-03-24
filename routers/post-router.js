@@ -6,6 +6,6 @@ const postCtrl= require("../controller/post-controller")
 postRouter.get("/posts", postCtrl.getPosts)
 postRouter.put("/posts", postCtrl.putPosts)
 postRouter.put("/posts", postCtrl.putFoundPost)
-postRouter.get("/posts", postCtrl.getFoundPost)
+
 
 module.exports = postRouter
