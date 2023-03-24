@@ -7,8 +7,6 @@ const userRouter = require('./routers/user-router');
 const postRouter = require('./routers/post-router');
 
 
-
-
 // MiddleWares
 app.set('port', process.env.PORT || 3000)
 app.use(express.urlencoded({extended:false}))
@@ -22,8 +20,7 @@ app.use(cors())
 //     })
 // })
 app.use(errorHandling);
-app.use(userRouter);
-app.use(postRouter);
 
+app.use(userRouter, postRouter)
 
 module.exports = app;
