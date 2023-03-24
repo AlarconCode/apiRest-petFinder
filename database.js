@@ -1,11 +1,11 @@
-
+if (process.env.NODE_ENV !== 'production') require('dotenv').config()
 const mysql = require('mysql2')
 
 const connection = mysql.createConnection({
-    host: "petfinder.cfpwaykl94ky.eu-north-1.rds.amazonaws.com",
-    user: "root",
-    password: "petFinder2023",
-    database: "petFinder",
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DATABASE,
     port: 3306
 });
 
