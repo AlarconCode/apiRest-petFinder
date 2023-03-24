@@ -29,13 +29,6 @@ function getPublications(request, response) {
 }
 
 function putPublication(request, response) {
-    // let sql = `UPDATE Posts SET 
-    // post-location= "${request.body.place}", 
-    // url-post="${request.body.imgPet}",
-    // description="${request.body.comment}",
-    // post-date="${request.body.post_date}",
-    // found=${request.body.found}
-    // WHERE (id-post=${request.body.id_cardPost})`
 
     let respuesta = { error: true, code: 500, result: [] };
     const { id_post, post_location, url_post, description, post_date, found } = request.body
@@ -58,29 +51,6 @@ function putPublication(request, response) {
     })
 }
 
-
-
-function putFoundPublication(request, response) {
-
-    let respuesta = { error: true, code: 500, result: [] };
-    const { id_post, found } = request.body
-    let params = [found, id_post]
-    let sql = `UPDATE Posts SET found=? WHERE id_post=?`
-
-    connection.query(sql, params, function (err, result) {
-        if (err) {
-            console.log(err);
-            response.send(respuesta)
-        }
-        else {
-            console.log(result)
-            respuesta.error = false;
-            respuesta.code = 200;
-            respuesta.result = result;
-            response.send(respuesta)
-        }
-    })
-}
 
 
 const postPublication = (req, res) => {
@@ -109,6 +79,6 @@ const postPublication = (req, res) => {
     })
 
 }
-module.exports = { getPublications, putPublication, putFoundPublication, postPublication }
+module.exports = { getPublications, putPublication, postPublication }
 
 
