@@ -58,6 +58,33 @@ function putPublication(request, response) {
     })
 }
 
+function getFoundPublication() {
+
+    let respuesta = { error: true, code: 500, result: [] };
+   
+    let id_post = request.query.id_post;
+     // const { id_post, found } = request.body
+    const {found} = request.body;
+    let params = [found, id_post]
+
+    let sql = `SELECT found FROM Posts WHERE id_post=?`
+
+    connection.query(sql, params, function (err, result) {
+        if (err) {
+            console.log(err);
+            response.send(respuesta)
+        }
+        else {
+            console.log(result)
+            respuesta.error = false;
+            respuesta.code = 200;
+            respuesta.result = result;
+            response.send(respuesta)
+        }
+    })
+}
+
+
 
 function putFoundPublication(request, response) {
 
@@ -108,5 +135,5 @@ const postPublication = (req, res) => {
     })
 
 }
-module.exports = { getPublications, putPublication, putFoundPublication, postPublication }
+module.exports = { getPublications, putPublication, putFoundPublication, postPublication, getFoundPublication }
 
