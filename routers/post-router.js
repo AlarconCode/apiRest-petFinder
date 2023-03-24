@@ -5,4 +5,5 @@ const postRouter = express.Router()
 postRouter.post('/posts', postPublication)
 postRouter.delete('/posts', deletePublication)
 
+
 module.exports = postRouter
