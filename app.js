@@ -21,8 +21,7 @@ app.use(cors())
 //     })
 // })
 app.use(errorHandling);
-app.use(userRouter)
-
+app.use(userRouter);
 app.use(postRouter);
 
 
