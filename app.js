@@ -4,6 +4,7 @@ const app = express()
 const cors = require('cors')
 const errorHandling = require("./error/errorHandling");
 const userRouter = require('./routers/user-router');
+const postRouter = requite("./routers/post-router");
 
 
 

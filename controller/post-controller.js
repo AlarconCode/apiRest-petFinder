@@ -59,8 +59,14 @@ function putPosts(request, response) {
 }
 
 function getFoundPost() {
+
+   
+   
     let respuesta = { error: true, code: 500, result: [] };
-    const { id_post, found } = request.body
+   
+    let id_post = request.query.id_post;
+     // const { id_post, found } = request.body
+    const {found} = request.body;
     let params = [found, id_post]
 
     let sql = `SELECT found FROM Posts WHERE id_post=?`
