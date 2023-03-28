@@ -87,4 +87,33 @@ const postLogin = (req, res) => {
 
 }
 
+const getUser = (req, res) => {
+
+    let respuesta = { error: true, code: 500, result: [] };
+    let sql = "";
+    let id_user = request.query.id_user;
+    let params = [id_post];
+
+    if (id_user) {
+        sql = `SELECT * FROM Users WHERE id_user=?`
+    } else {
+        sql = `SELECT * FROM Users`
+    }
+
+    connection.query(sql, params, function (err, result) {
+        if (err) {
+            console.log(err);
+            response.send(respuesta)
+        }
+        else {
+            console.log(result)
+            respuesta.error = false;
+            respuesta.code = 200;
+            respuesta.result = result;
+            response.send(respuesta)
+        }
+    })
+
+}
+
 module.exports = {postUser, putUser, postLogin}

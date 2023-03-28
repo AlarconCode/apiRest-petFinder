@@ -3,12 +3,12 @@ const connection = require("../database")
 function getPublications(request, response) {
     let respuesta = { error: true, code: 500, result: [] };
     let sql = "";
-    let id_user = request.query.id_user;
-    let params = [id_user];
+    let id_post = request.query.id_post;
+    let params = [id_post];
 
     //como esta en la base de datos dentor del array.
     if (id_user) {
-        sql = `SELECT * FROM Posts WHERE id_user=?`
+        sql = `SELECT * FROM Posts WHERE id_post=?`
     } else {
         sql = `SELECT * FROM Posts`
     }
