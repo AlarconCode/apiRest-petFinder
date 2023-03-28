@@ -91,7 +91,7 @@ const getUser = (req, res) => {
 
     let respuesta = { error: true, code: 500, result: [] };
     let sql = "";
-    let id_user = request.query.id_user;
+    let id_user = req.query.id_user;
     let params = [id_user];
 
     if (id_user) {
@@ -103,14 +103,14 @@ const getUser = (req, res) => {
     connection.query(sql, params, function (err, result) {
         if (err) {
             console.log(err);
-            response.send(respuesta)
+            res.send(respuesta)
         }
         else {
             console.log(result)
             respuesta.error = false;
             respuesta.code = 200;
             respuesta.result = result;
-            response.send(respuesta)
+            res.send(respuesta)
         }
     })
 
