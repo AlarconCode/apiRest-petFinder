@@ -92,7 +92,7 @@ const getUser = (req, res) => {
     let respuesta = { error: true, code: 500, result: [] };
     let sql = "";
     let id_user = request.query.id_user;
-    let params = [id_post];
+    let params = [id_user];
 
     if (id_user) {
         sql = `SELECT * FROM Users WHERE id_user=?`
@@ -116,4 +116,4 @@ const getUser = (req, res) => {
 
 }
 
-module.exports = {postUser, putUser, postLogin}
+module.exports = {postUser, putUser, postLogin, getUser}
