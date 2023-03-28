@@ -7,7 +7,7 @@ function getPublications(request, response) {
     let params = [id_post];
 
     //como esta en la base de datos dentor del array.
-    if (id_user) {
+    if (id_post) {
         sql = `SELECT * FROM Posts WHERE id_post=?`
     } else {
         sql = `SELECT * FROM Posts`
