@@ -6,11 +6,11 @@ function getPublications(request, response) {
     let id_post = request.query.id_post;
     let params = [id_post];
 
-    //como esta en la base de datos dentor del array.
     if (id_post) {
         sql = `SELECT * FROM Posts WHERE id_post=?`
     } else {
-        sql = `SELECT * FROM Posts`
+        sql = `SELECT p.id_post, p.post_location, p.url_post, p.description, p.post_date, p.found, u.user_name, u.user_image FROM Posts AS p
+        INNER JOIN Users AS u ON u.id_user = p.id_user`
     }
 
     connection.query(sql, params, function (err, result) {
