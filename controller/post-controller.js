@@ -3,11 +3,12 @@ const connection = require("../database")
 function getPublications(request, response) {
     let respuesta = { error: true, code: 500, result: [] };
     let sql = "";
-    let id_post = request.query.id_post;
-    let params = [id_post];
+    let id_user = request.query.id_user;
+    let params = [id_user];
 
-    if (id_post) {
-        sql = `SELECT * FROM Posts WHERE id_post=?`
+    if (id_user) {
+        sql = `SELECT p.id_post, p.post_location, p.url_post, p.description, p.post_date, p.found, u.user_name, u.user_image FROM Posts AS p
+        INNER JOIN Users AS u ON u.id_user = p.id_user WHERE p.id_user=?`
     } else {
         sql = `SELECT p.id_post, p.post_location, p.url_post, p.description, p.post_date, p.found, u.user_name, u.user_image FROM Posts AS p
         INNER JOIN Users AS u ON u.id_user = p.id_user`
