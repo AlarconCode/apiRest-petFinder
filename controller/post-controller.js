@@ -92,7 +92,7 @@ const deletePublication = (req, res) => {
     
     let params = [id_post]
     
-    let sql = `DELETE from Posts WHERE id_post = ?`
+    let sql = `DELETE FROM Posts WHERE id_post = ?`
     
     connection.query(sql, params, (err, result) => {
         
