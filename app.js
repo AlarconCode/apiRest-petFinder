@@ -24,7 +24,7 @@ app.use(cors())
 // })
 app.use(errorHandling);
 
-//SENDEMAIL
+//SENDEMAIL START
 app.use(bodyParser.json())
 // app.use(cors({ origin: "*" }))
 app.post("/sendemail", (request, response) => {
@@ -35,6 +35,21 @@ app.post("/sendemail", (request, response) => {
         response.send(info);
     })
 })
+
+async function sendMail(user, callback){
+    //create reusable transporter object using the default SMYP transport
+    let transporter = nodemailer.createTransport({
+        host:"smtp.gmail.com",
+        port:587,
+        secure:false, // true for 465, false for other ports
+        auth:{
+            user:details.email,
+            pass: details.password
+        
+        }
+    })
+}
+//SENDEMAIL  END
 
 app.use(userRouter, postRouter)
 
