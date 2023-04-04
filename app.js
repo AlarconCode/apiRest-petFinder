@@ -5,6 +5,7 @@ const cors = require('cors')
 const errorHandling = require("./error/errorHandling");
 const userRouter = require('./routers/user-router');
 const postRouter = require('./routers/post-router');
+const emailRouter = require('./routers/email-router');
 
 
 // MiddleWares
@@ -21,6 +22,6 @@ app.use(cors())
 // })
 app.use(errorHandling);
 
-app.use(userRouter, postRouter)
+app.use(userRouter, postRouter, emailRouter)
 
 module.exports = app;

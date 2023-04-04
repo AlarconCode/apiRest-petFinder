@@ -7,10 +7,10 @@ function getPublications(request, response) {
     let params = [id_user];
 
     if (id_user) {
-        sql = `SELECT p.id_post, p.id_user, p.post_location, p.url_post, p.description, p.post_date, p.found, u.user_name, u.user_image FROM Posts AS p
+        sql = `SELECT p.id_post, p.id_user, p.post_location, p.url_post, p.description, p.post_date, p.found, u.user_name, u.user_image, u.email FROM Posts AS p
         INNER JOIN Users AS u ON u.id_user = p.id_user WHERE p.id_user=?`
     } else {
-        sql = `SELECT p.id_post, p.id_user, p.post_location, p.url_post, p.description, p.post_date, p.found, u.user_name, u.user_image FROM Posts AS p
+        sql = `SELECT p.id_post, p.id_user, p.post_location, p.url_post, p.description, p.post_date, p.found, u.user_name, u.user_image,  u.email FROM Posts AS p
         INNER JOIN Users AS u ON u.id_user = p.id_user`
     }
 
