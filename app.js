@@ -5,9 +5,10 @@ const cors = require('cors')
 const errorHandling = require("./error/errorHandling");
 const userRouter = require('./routers/user-router');
 const postRouter = require('./routers/post-router');
-//SENDEMAIL
-// const nodemailer = require('nodemailer')
+
 const bodyParser = require('body-parser')
+const configMensaje = require("./configMensaje");
+app.use(bodyParser.json());
 
 
 // MiddleWares
@@ -24,9 +25,12 @@ app.use(cors())
 // })
 app.use(errorHandling);
 
-app.post('/formulario', (req, res) => {})
+app.post("/formulario", (req, res) => {
+    configMensaje(req.body);
+    res.status(200).send();
+})
 app.listen(3000, () => {
-console.log('Servidor corriendo')
+    console.log('Servidor corriendo')
 });
 
 
@@ -35,17 +39,17 @@ console.log('Servidor corriendo')
 // const express = require("express");
 // const cors = require("cors");
 // const bodyParser = require("body-parser");
-const configMensaje = require("./configMensaje");
-// const app = express();
-app.use(bodyParser.json());
+// const configMensaje = require("./configMensaje");
+// // const app = express();
+// app.use(bodyParser.json());
 // app.use(cors())
-app.post("/formulario", (req, res) => {
- configMensaje(req.body);
- res.status(200).send();
-})
-app.listen(3000, () => {
- console.log("Servidor corriendo")
-});
+// app.post("/formulario", (req, res) => {
+//  configMensaje(req.body);
+//  res.status(200).send();
+// })
+// app.listen(3000, () => {
+//  console.log("Servidor corriendo")
+// });
 
 
 app.use(userRouter, postRouter)
