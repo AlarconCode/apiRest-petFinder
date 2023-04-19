@@ -2,7 +2,7 @@ if (process.env.NODE_ENV !== 'production') require('dotenv').config()
 const express = require('express')
 const app = express()
 const cors = require('cors')
-const errorHandling = require("./error/errorHandling");
+const errorHandling = require('./error/errorHandling');
 const userRouter = require('./routers/user-router');
 const postRouter = require('./routers/post-router');
 const emailRouter = require('./routers/email-router');
