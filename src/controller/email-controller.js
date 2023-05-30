@@ -19,14 +19,23 @@ const contactByMail = (req, res) => {
     })
 
     const mailOptions = {
-      from: 'petfinderappmail@gmail.com',
+      from: `${email}`,
       to: emailUser,
-      subject: `Hola ${userName} he encontrado tu mascota`,
+      subject: `PetFinder - ¡Hola ${userName}!`,
       html: `
-        <p>mi nombre es: ${name}</p>
-        <p>mi correo es: ${email}</p>
-        <p>mi teléfono es: ${phone}</p>
-        <p>${comments}<p>
+      <p>Mis datos de contacto son:</p>
+      <br>
+      <b>Nombre:</b> ${name}
+      <b>Correo:</b> ${email}
+      <b>Teléfono:</b> ${phone}
+      <br>
+      <b>Mensaje:</b>
+      <p>${comments}<p>
+      <br>
+      <br>
+      <br>
+      <br>
+      🐶🐱
       `
     }
 
