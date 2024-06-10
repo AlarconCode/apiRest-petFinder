@@ -32,6 +32,9 @@ if (process.env.NODE_ENV !== 'production') require('dotenv').config()
     //     })
     // })
     app.use(errorHandling);
+    app.get('/', (req, res) => {
+        res.send('API DESPLEGADA')
+      })
     
     app.use(userRouter, postRouter, emailRouter)
     
