@@ -25,8 +25,8 @@ const contactByMail = (req, res) => {
       html: `
       <p>Mis datos de contacto son:</p>
       <br>
-      <b>Nombre:</b> ${name}
-      <b>Correo:</b> ${email}
+      <b>Nombre:</b> ${name}<br>
+      <b>Correo:</b> ${email}<br>
       <b>Teléfono:</b> ${phone}
       <br>
       <b>Mensaje:</b>
