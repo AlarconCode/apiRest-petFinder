@@ -21,9 +21,9 @@ const contactByMail = (req, res) => {
     const mailOptions = {
       from: `${email}`,
       to: emailUser,
-      subject: `PetFinder - ¡Hola ${userName}!`,
+      subject: `🐾 PetFinder - ¡Hola ${userName}!`,
       html: `
-      <p>Mis datos de contacto son:</p>
+      <p>¡Te acaban de contactar en PetFinder!</p>
       <br>
       <b>Nombre:</b> ${name}<br>
       <b>Correo:</b> ${email}<br>
